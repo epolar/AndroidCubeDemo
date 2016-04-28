@@ -7,8 +7,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.BaseInterpolator;
 import android.widget.FrameLayout;
 
-import cn.geminiwen.cube.animation.CubeLeftOutAnimation;
-import cn.geminiwen.cube.animation.CubeRightInAnimation;
+import cn.geminiwen.cube.animation.CubeBottomInAnimation;
+import cn.geminiwen.cube.animation.CubeTopOutAnimation;
 
 /**
  * Created by geminiwen on 15/9/24.
@@ -32,19 +32,34 @@ public class CubeLayout extends FrameLayout{
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+    }
+
+    public void startTransform() {
         View foregroundView = getChildAt(0);
         View backgroundView = getChildAt(1);
 
-        CubeLeftOutAnimation cubeLeftOutAnimation = new CubeLeftOutAnimation();
-        cubeLeftOutAnimation.setDuration(1000);
-        cubeLeftOutAnimation.setFillAfter(true);
+//        CubeLeftOutAnimation cubeLeftOutAnimation = new CubeLeftOutAnimation();
+//        cubeLeftOutAnimation.setDuration(1000);
+//        cubeLeftOutAnimation.setFillAfter(true);
+//
+//        CubeRightInAnimation cubeRightInAnimation = new CubeRightInAnimation();
+//        cubeRightInAnimation.setDuration(1000);
+//        cubeRightInAnimation.setFillAfter(true);
+//
+//        foregroundView.startAnimation(cubeLeftOutAnimation);
+//        backgroundView.startAnimation(cubeRightInAnimation);
 
-        CubeRightInAnimation cubeRightInAnimation = new CubeRightInAnimation();
-        cubeRightInAnimation.setDuration(1000);
-        cubeRightInAnimation.setFillAfter(true);
+        CubeTopOutAnimation cubeTopOutAnimation = new CubeTopOutAnimation();
+        cubeTopOutAnimation.setDuration(1000);
+        cubeTopOutAnimation.setFillAfter(true);
 
-        foregroundView.startAnimation(cubeLeftOutAnimation);
-        backgroundView.startAnimation(cubeRightInAnimation);
+        CubeBottomInAnimation cubeBottomInAnimation = new CubeBottomInAnimation();
+        cubeBottomInAnimation.setDuration(1000);
+        cubeBottomInAnimation.setFillAfter(true);
+
+        foregroundView.startAnimation(cubeTopOutAnimation);
+        backgroundView.startAnimation(cubeBottomInAnimation);
     }
+
 }
 
