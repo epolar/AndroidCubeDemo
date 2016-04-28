@@ -1,3 +1,5 @@
+添加竖向效果
+
 # AndroidCubeDemo
 Android Cube Effect Demo (not use view pager transformer)
 Cube Layout demo
