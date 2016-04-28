@@ -1,16 +1,29 @@
 package cn.geminiwen.cube;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import cn.geminiwen.cube.view.CubeLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    private CubeLayout cube;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cube = (CubeLayout) findViewById(R.id.cube);
+        cube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cube.startTransform();
+            }
+        });
     }
 
     @Override
